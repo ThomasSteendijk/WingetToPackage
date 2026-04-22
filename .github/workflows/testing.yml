@@ -4,6 +4,22 @@ name: CI
 
 # Controls when the workflow will run
 on:
+  workflow_dispatch:
+    inputs:
+      name:
+        type: choice
+        description: Who to greet
+        options: 
+        - monalisa
+        - cschleiden
+      message:
+        required: true
+      use-emoji:
+        type: boolean
+        description: Include 🎉🤣 emojis
+      environment:
+        type: environment
+
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
     branches: [ "main" ]
